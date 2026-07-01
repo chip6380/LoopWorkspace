@@ -225,7 +225,9 @@ jobs:
       # Install project dependencies
       - name: Install Project Dependencies
         run: bundle install
-
+      # Update fastlane to fix compatibility issues with Apple API
+      - name: Update fastlane
+        run: gem update fastlane
       # Sync the GitHub runner clock with the Windows time server (workaround as suggested in https://github.com/actions/runner/issues/2996)
       - name: Sync clock
         run: sudo sntp -sS time.windows.com
